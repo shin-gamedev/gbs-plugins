@@ -18,3 +18,4 @@ Reopen your project in GB Studio and compile your game.
 -Credits-
 Made by Shin
 shintendo.neocities.org
+Attribution to Shin or shintendo.neocities.org in credits is appreciated, but not necessary.
