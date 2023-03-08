@@ -4,7 +4,7 @@ For GB Studio 3.1.0
 7/3/2023
 
 -Description-
-This plugin allows for all actors to pass through other actors including the player.
+This plugin allows for all actors to pass through other actors, including the player, even when collisions are enabled in a move event.
 Moving actors will no longer stop moving when colliding with another actor.
 This is useful for when you want enemy actors to collide with the player.
 The only edit this plugin makes is commenting out the actor collision checks in vm_actor.c.
