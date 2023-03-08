@@ -7,7 +7,7 @@ Further information about compatibility and installation can be found in each pl
 ## License
 Plugins licensed under WTFPL, so you can do whatever you like with them. Attribution to Shin or shintendo.neocities.org in credits is appreciated, but not necessary.
 ## Plugins
-##### Engine plugin- actors pass through actors (3.1.0)
+#### Engine plugin- actors pass through actors (3.1.0)
 This plugin allows for all actors to pass through other actors including the player.
 Moving actors will no longer stop moving when colliding with another actor.
 This is useful for when you want enemy actors to collide with the player.
