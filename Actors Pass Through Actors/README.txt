@@ -13,7 +13,7 @@ I may add options for collision with specific collision groups in the future.
 
 Installation instructions-
 Create a folder called 'plugins' inside the root folder of your GB Studio project.
-Add the 'EnginePluginActorsPassThroughActors' folder that contains this readme file to the 'plugins' folder.
+Add the 'Actors Pass Through Actors' folder that contains this readme file to the 'plugins' folder.
 Reopen your project in GB Studio and compile your game.
 
 Credits-
