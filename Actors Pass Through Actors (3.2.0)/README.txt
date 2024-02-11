@@ -1,5 +1,5 @@
 Version-
-2.0
+2.1
 Made for GB Studio 3.2.0
 Released 7/3/2023
 Updated 9/2/2024
