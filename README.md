@@ -19,3 +19,10 @@ This plugin loads a sprite into memory in the current scene.
 It does not compile to any GBVM instructions.
 It only tells the GBS compiler to include the sprite in the current scene.
 The sprite can then be referenced by engine code, such as when dynamically loading projectiles.
+#### Shmup Reloaded (3.2.0)
+Shmup Reloaded is an engine plugin that completely replaces the Shoot 'Em Up scene type. It includes the following features:
+-Full diagonal 8 way movement for the player with autoscrolling in all 4 directions
+-Appropriate animation controller for the player
+-Consistent 8px by 8px collisions for the player regardless of their collision box, allowing the player to use a smaller collision box for a better feeling shmup
+-All triggers activate when they are scrolled onto the screen rather than when the player touches them (checked at the top of the screen for horizontal scrolling and the left of the screen for vertical scrolling)
+-Better collision for higher movement speeds
