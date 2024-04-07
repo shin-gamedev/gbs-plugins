@@ -1,5 +1,5 @@
 Version-
-1.0
+1.1
 Made for GB Studio 3.2.0
 Released 6/3/2024
 
@@ -16,6 +16,10 @@ Installation instructions-
 Create a folder called 'plugins' inside the root folder of your GB Studio project.
 Add the 'Shmup Reloaded' folder that contains this readme file to the 'plugins' folder.
 Compile your game.
+
+Updates-
+1.1 (8/4/2024)-
+-Consistent 8px by 8px collisions now also apply to background collisions
 
 Credits-
 Made by Shin
