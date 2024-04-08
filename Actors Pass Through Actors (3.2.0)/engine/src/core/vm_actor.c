@@ -28,6 +28,7 @@ BANKREF(VM_ACTOR)
 #define TILE_FRACTION_MASK         0b1111111
 #define ONE_TILE_DISTANCE          128
 
+UBYTE actors_pass;
 
 typedef struct act_move_to_t {
     INT16 ID;
@@ -153,13 +154,15 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         // Move actor
         point_translate_dir(&actor->pos, new_dir, actor->move_speed);
 
-        // Check for actor collision
-        // if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE)) {
-        //     point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);
-        //     THIS->flags = 0;
-        //     actor_set_anim_idle(actor);
-        //     return;
-        // }
+        if (actors_pass == false) {
+            // Check for actor collision
+            if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE)) {
+                point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);
+                THIS->flags = 0;
+                actor_set_anim_idle(actor);
+                return;
+            }
+        }
 
         // If first frame moving in this direction update actor direction
         if (!CHK_FLAG(THIS->flags, MOVE_ACTIVE_H)) {
@@ -186,14 +189,16 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
 
         // Move actor
         point_translate_dir(&actor->pos, new_dir, actor->move_speed);
-
-        // Check for actor collision
-        // if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE)) {
-        //     point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);
-        //     THIS->flags = 0;
-        //     actor_set_anim_idle(actor);
-        //     return;
-        // }
+        
+        if (actors_pass == false) {
+            // Check for actor collision
+            if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE)) {
+                point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);
+                THIS->flags = 0;
+                actor_set_anim_idle(actor);
+                return;
+            }
+        }
 
         // If first frame moving in this direction update actor direction
         if (!CHK_FLAG(THIS->flags, MOVE_ACTIVE_V)) {

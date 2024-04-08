@@ -1,4 +1,15 @@
 {
   "version": "3.2.0-e3",
-  "fields": []
+  "fields": [    
+    {
+      "key": "actors_pass",
+      "label": "Actors Pass Through Actors",
+      "group": "Actors pass through actors",
+      "type": "slider",
+      "cType": "UBYTE",
+      "defaultValue": 1,
+      "min": 0,
+      "max": 1
+    }
+  ]
 }
