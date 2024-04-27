@@ -22,6 +22,14 @@ Shmup Reloaded is an engine plugin that completely replaces the Shoot 'Em Up sce
 -All triggers activate when they are scrolled onto the screen rather than when the player touches them (checked at the top of the screen for horizontal scrolling and the left of the screen for vertical scrolling)
 -Better collision for higher movement speeds
 ## Event plugins
+#### Background Dialogue (3.2.0)
+An event plugin that allows you to easily make dialogue boxes using backgrounds in GB Studio. It's suitable for making standalone visual novel style scenes and cutscenes. Features include:
+-Positionable name tags
+-Multiple boxes of positionable dialogue
+-Automatic line spacing
+-Prompt when dialogue is complete (uses bottom right tile of font)
+#### Repaint Background (3.2.0)
+An event plugin that allows you to repaint the background with the original scene background, removing any background text or dialogue from the screen.
 #### Load Sprite (3.1.0)
 This plugin loads a sprite into memory in the current scene.
 It does not compile to any GBVM instructions.
