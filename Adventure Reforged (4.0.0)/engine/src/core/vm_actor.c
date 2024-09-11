@@ -154,7 +154,7 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         // Move actor
         point_translate_dir(&actor->pos, new_dir, actor->move_speed);
 
-        // Check for actor collision
+        // Check for actor collision (part of base adventure.c, removed so actors pass through each other and the player)
         // if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE)) {
         //     point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);
         //     THIS->flags = 0;
@@ -162,7 +162,7 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         //     return;
         // }
 
-        // If overlapping solid actor stop movement
+        // If overlapping solid actor stop movement (makes actors respect solid actors, removed for performance)
 		// overlap_actor = actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE);
         // if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && overlap_actor != NULL && overlap_actor->collision_group == NULL) {
         //     point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);   
@@ -171,7 +171,7 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         //     return;
         // }
 		
-		// If solid actor overlapping player stop movement
+		// If solid actor overlapping player stop movement (makes solid actors respect the player as solid, removed for performance)
         // overlap_actor = actor_overlapping_player(FALSE);
 		// if (actor->collision_group == NULL && overlap_actor == actor) {
 		// 	point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);   
@@ -206,7 +206,7 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         // Move actor
         point_translate_dir(&actor->pos, new_dir, actor->move_speed);
 
-        // Check for actor collision
+        // Check for actor collision (part of base adventure.c, removed so actors pass through each other and the player)
         // if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE)) {
         //     point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);
         //     THIS->flags = 0;
@@ -214,7 +214,7 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         //     return;
         // }
 
-        // If overlapping solid actor stop movement
+        // If overlapping solid actor stop movement (makes actors respect solid actors, removed for performance)
 		// overlap_actor = actor_overlapping_bb(&actor->bounds, &actor->pos, actor, FALSE);
         // if (CHK_FLAG(params->ATTR, ACTOR_ATTR_CHECK_COLL) && overlap_actor != NULL && overlap_actor->collision_group == NULL) {
         //     point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);   
@@ -223,7 +223,7 @@ void vm_actor_move_to(SCRIPT_CTX * THIS, INT16 idx) OLDCALL BANKED {
         //     return;
         // }
 		
-		// If solid actor overlapping player stop movement
+		// If solid actor overlapping player stop movement (makes solid actors respect the player as solid, removed for performance)
         // overlap_actor = actor_overlapping_player(FALSE);
 		// if (actor->collision_group == NULL && overlap_actor == actor || actor->collision_group == 8 && overlap_actor == actor) {
 		// 	point_translate_dir(&actor->pos, FLIPPED_DIR(new_dir), actor->move_speed);   

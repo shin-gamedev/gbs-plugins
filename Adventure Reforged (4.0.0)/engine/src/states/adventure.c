@@ -86,7 +86,7 @@ void adventure_update(void) BANKED {
     new_pos.x = PLAYER.pos.x;
     new_pos.y = PLAYER.pos.y;
 	
-	// If changed movement angle this frame, round subpixel position to nearest pixel position
+	// If changed movement angle this frame, round subpixel position to nearest pixel position. Prevents jittering on diagonal movement
 		if (angle != old_angle) {
 			PLAYER.pos.x = PLAYER.pos.x & 0xFFF0;
 			PLAYER.pos.y = PLAYER.pos.y & 0xFFF0;
@@ -259,7 +259,7 @@ void adventure_update(void) BANKED {
 			
 			
 		}
-		// else trigger on hit script
+		// Else trigger on hit script
 		else {
 			player_register_collision_with(hit_actor);
 		}
