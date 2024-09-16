@@ -14,6 +14,14 @@ This is useful for when you want enemy actors to collide with the player.
 The main edit this plugin makes is commenting out the actor collision checks in vm_actor.c.
 #### Top Down Followers (3.2.0)
 This plugin allows 0-3 actors to follow the player in a Top Down scene. The plugin adds an engine field called 'Number of Followers' that can be changed from the settings or at runtime from the 'Engine Field Update' event. The plugin selects that number of actors in the scene as followers, starting with the first actor.
+#### Adventure Reforged (4.0.0)
+Adventure Reforged is an engine plugin that completely replaces the Adventure scene type. It includes the following features:
+-More performant player movement
+-Smoother diagonal player movement
+-Solid actors that the player cannot move through
+-Actors pass through each other and the player
+-Toggleable background collision
+-Toggleable swimming movement
 #### Shmup Reloaded (3.2.0)
 Shmup Reloaded is an engine plugin that completely replaces the Shoot 'Em Up scene type. It includes the following features:
 -Full diagonal 8 way movement for the player with autoscrolling in all 4 directions
