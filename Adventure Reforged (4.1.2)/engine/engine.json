@@ -1,0 +1,29 @@
+{
+  "version": "4.2.0-e1",
+  "fields": [
+	{
+      "key": "solid_ladders",
+      "label": "Toggleable Collision",
+      "group": "Adventure",
+      "type": "select",
+      "options": [
+        [0, "Passable"],
+        [1, "Impassable"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 0
+    },
+	{
+      "key": "swimming",
+      "label": "Swimming",
+      "group": "Adventure",
+      "type": "select",
+      "options": [
+        [0, "Not swimming"],
+        [1, "Swimming"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 0
+    }
+  ]
+}
