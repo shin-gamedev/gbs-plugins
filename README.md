@@ -22,7 +22,7 @@ Adventure Reforged is an engine plugin that completely replaces the Adventure sc
 -Actors pass through each other and the player
 -Toggleable background collision
 -Toggleable swimming movement
-#### Shmup Reloaded (3.2.0)
+#### Shmup Reloaded (4.1.2, 3.2.0)
 Shmup Reloaded is an engine plugin that completely replaces the Shoot 'Em Up scene type. It includes the following features:
 -Full diagonal 8 way movement for the player with autoscrolling in all 4 directions
 -Appropriate animation controller for the player
