@@ -1,0 +1,15 @@
+{
+  "version": "4.2.0-e1",
+  "fields": [    
+    {
+      "key": "topdown_followers",
+      "label": "Number of Followers",
+      "group": "Top Down Followers",
+      "type": "slider",
+      "cType": "UBYTE",
+      "defaultValue": 3,
+      "min": 0,
+      "max": 3
+    }
+  ]
+}
