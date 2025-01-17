@@ -1,6 +1,6 @@
 Version-
 1.1
-Made for GB Studio 4.1.3
+Made for GB Studio 4.1.2
 Released 1/17/2025
 
 Description-
