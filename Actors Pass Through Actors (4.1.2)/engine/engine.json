@@ -1,0 +1,17 @@
+{
+  "version": "4.2.0-e1",
+  "fields": [    
+    {
+      "key": "actors_pass",
+      "label": "Actors Pass Through Actors",
+      "group": "Actors pass through actors",
+      "type": "select",
+      "options": [
+        [0, "Actors do not pass"],
+        [1, "Actors pass"]
+      ],
+      "cType": "UBYTE",
+      "defaultValue": 0
+    }
+  ]
+}
