@@ -14,7 +14,7 @@ Create a folder called 'plugins' inside the root folder of your GB Studio projec
 Add the 'Actors Pass Through Actors' folder that contains this readme file to the 'plugins' folder.
 Reopen your project in GB Studio.
 The 'Engine Field Update' event can now be used to toggle actors passing through one another on and off.
-When a new scene is loaded, the toggle with default to off, so you must add an event in the init of each scene where you want actors passing through actors.
+By default, the toggle is off, so add an event to turn it on.
 
 Updates-
 3.0 (19/6/2024)-

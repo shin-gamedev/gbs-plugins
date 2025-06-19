@@ -28,7 +28,7 @@ BANKREF(VM_ACTOR)
 #define TILE_FRACTION_MASK         0b1111111
 #define ONE_TILE_DISTANCE          128
 
-UBYTE actors_pass = 0;
+UBYTE actors_pass;
 
 typedef struct act_move_to_t {
     INT16 ID;
