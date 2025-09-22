@@ -78,7 +78,10 @@ const UBYTE * text_sound_data;
 UBYTE overlay_priority;
 UBYTE text_palette;
 
-UBYTE talking_actor;
+UBYTE talking_actor_index;
+actor_t *talking_actor;
+UBYTE prompt_actor_index;
+actor_t *prompt_actor;
 
 void ui_init(void) BANKED {
     vwf_direction               = UI_PRINT_LEFTTORIGHT;
@@ -430,6 +433,9 @@ UBYTE ui_draw_text_buffer_char(void) BANKED {
 void ui_update(void) NONBANKED {
     UBYTE flag = FALSE;
 
+    talking_actor = actors + (UBYTE)(talking_actor_index);
+    prompt_actor = actors + (UBYTE)(prompt_actor_index);
+
     // y should always move first
     if (win_pos_y != win_dest_pos_y) {
         if ((game_time & ui_time_masks[win_speed]) == 0) {
@@ -438,6 +444,7 @@ void ui_update(void) NONBANKED {
             if (win_pos_y < win_dest_pos_y) win_pos_y += interval; else win_pos_y -= interval;
         }
         flag = TRUE;
+        if (prompt_actor_index != 0) prompt_actor->hidden = TRUE;
     }
     if (win_pos_x != win_dest_pos_x) {
         if ((game_time & ui_time_masks[win_speed]) == 0) {
@@ -446,19 +453,15 @@ void ui_update(void) NONBANKED {
             if (win_pos_x < win_dest_pos_x) win_pos_x += interval; else win_pos_x -= interval;
         }
         flag = TRUE;
+        if (prompt_actor_index != 0) prompt_actor->hidden = TRUE;
     }
 
     // don't draw text while moving
     if (flag) return;
-    // set talking actor
-    actor_t *actor;
-    actor = actors + (UBYTE)(talking_actor);
+
     // all drawn - nothing to do
     if (text_drawn) {
-        // disable talking actor
-        if (talking_actor != 0) {
-            actor_set_anim_idle(actor);
-        }
+        if (talking_actor_index != 0) actor_set_anim_idle(talking_actor);
         return;
     }
     // too fast - wait
@@ -470,10 +473,7 @@ void ui_update(void) NONBANKED {
     // render next char
     do {
         flag = ui_draw_text_buffer_char();
-        // enable talking actor
-        if (talking_actor != 0) {
-            actor_set_anim_moving(actor);
-        }
+        if (talking_actor_index != 0) actor_set_anim_moving(talking_actor);
     } while (((text_ff) || (text_draw_speed == 0)) && (!text_drawn));
     // play sound
     if ((flag) && (text_sound_bank != SFX_STOP_BANK)) music_play_sfx(text_sound_bank, text_sound_data, text_sound_mask, MUSIC_SFX_PRIORITY_NORMAL);
@@ -571,7 +571,15 @@ void ui_run_modal(UBYTE wait_flags) BANKED {
         if (wait_flags & UI_WAIT_BTN_ANY)
             if (!INPUT_ANY_PRESSED) fail = TRUE;
 
-        if (!fail) return;
+        if (!fail) {
+            if (prompt_actor_index != 0) prompt_actor->hidden = TRUE;
+            return;
+        }
+
+        if (text_drawn)
+        {
+            if (prompt_actor_index != 0) prompt_actor->hidden = FALSE;
+        }
 
         ui_update();
 

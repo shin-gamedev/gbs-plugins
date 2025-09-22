@@ -29,8 +29,8 @@ Shmup Reloaded is an engine plugin that completely replaces the Shoot 'Em Up sce
 -Consistent 8px by 8px collisions for the player regardless of their collision box, allowing the player to use a smaller collision box for a better feeling shmup
 -All triggers activate when they are scrolled onto the screen rather than when the player touches them (checked at the top of the screen for horizontal scrolling and the left of the screen for vertical scrolling)
 -Better collision for higher movement speeds
-#### Talking Actors (4.1.2)
-An engine plugin that changes an actor's animation while dialogue is being drawn, useful for animating talking characters during cutscenes.
+#### Talking Actors and Dialogue Prompts (4.1.2)
+An engine plugin that changes an actor's animation while dialogue is being drawn, useful for animating talking characters during cutscenes. It also allows an additional actor to be used as a prompt when a button can be pressed to advance dialogue.
 ## Event plugins
 #### Background Dialogue (3.2.0)
 An event plugin that allows you to easily make dialogue boxes using backgrounds in GB Studio. It's suitable for making standalone visual novel style scenes and cutscenes. Features include:
