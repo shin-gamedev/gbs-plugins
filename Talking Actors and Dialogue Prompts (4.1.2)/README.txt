@@ -20,6 +20,8 @@ Talking Actors usage instructions-
 Dialogue Prompts usage instructions-
 -Add an actor to your scene.
 -Add an Engine Field Update event to your scene. In the event's drop down menu, you should see the new option Set Dialogue Prompt Actor in the Dialogue category. Use this option to set which actor will be automatically hidden and shown as a dialogue prompt. Actors are referred to by their index (actor 1, actor 2, etc) which you can see in the editor by leaving an actor's name empty. You can also change an actor's index by removing it and readding it to the scene, which will place it at the end of the list.
+-Add a GBVM Script event with the following single line to your scene's On Init script. This displays actors over the overlay and dialogue boxes.
+VM_SET_CONST_UINT8 _show_actors_on_overlay, 1
 -Add a Hide Actor event to your scene's On Init script to hide the dialogue prompt actor. I unfortunately couldn't figure out a way to do this from the plugin without impacting compatibility with other plugins.
 
 
