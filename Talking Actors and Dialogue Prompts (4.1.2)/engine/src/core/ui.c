@@ -461,7 +461,7 @@ void ui_update(void) NONBANKED {
 
     // all drawn - nothing to do
     if (text_drawn) {
-        if (talking_actor_index != 0) actor_set_anim_idle(talking_actor);
+        if (talking_actor_index) actor_set_anim_idle(talking_actor);
         return;
     }
     // too fast - wait
@@ -473,7 +473,7 @@ void ui_update(void) NONBANKED {
     // render next char
     do {
         flag = ui_draw_text_buffer_char();
-        if (talking_actor_index != 0) actor_set_anim_moving(talking_actor);
+        if (talking_actor_index != 0 != 0 && current_text_speed != 0) actor_set_anim_moving(talking_actor);
     } while (((text_ff) || (text_draw_speed == 0)) && (!text_drawn));
     // play sound
     if ((flag) && (text_sound_bank != SFX_STOP_BANK)) music_play_sfx(text_sound_bank, text_sound_data, text_sound_mask, MUSIC_SFX_PRIORITY_NORMAL);

@@ -1,7 +1,7 @@
 Version-
-1.1
+1.2
 Made for GB Studio 4.1.2
-Released 18/9/2025, updated 22/9/2025
+Released 18/9/2025, updated 24/9/2025
 
 Description-
 Talking Actors and Dialogue Prompts is an engine plugin that changes an actor's animation while dialogue is being drawn, useful for animating talking characters during cutscenes. It also allows an additional actor to be used as a prompt when a button can be pressed to advance dialogue.
