@@ -444,7 +444,7 @@ void ui_update(void) NONBANKED {
             if (win_pos_y < win_dest_pos_y) win_pos_y += interval; else win_pos_y -= interval;
         }
         flag = TRUE;
-        if (prompt_actor_index != 0) prompt_actor->hidden = TRUE;
+        if (prompt_actor_index != 0) actor_set_anim_idle(prompt_actor);
     }
     if (win_pos_x != win_dest_pos_x) {
         if ((game_time & ui_time_masks[win_speed]) == 0) {
@@ -453,7 +453,7 @@ void ui_update(void) NONBANKED {
             if (win_pos_x < win_dest_pos_x) win_pos_x += interval; else win_pos_x -= interval;
         }
         flag = TRUE;
-        if (prompt_actor_index != 0) prompt_actor->hidden = TRUE;
+        if (prompt_actor_index != 0) actor_set_anim_idle(prompt_actor);
     }
 
     // don't draw text while moving
@@ -572,13 +572,13 @@ void ui_run_modal(UBYTE wait_flags) BANKED {
             if (!INPUT_ANY_PRESSED) fail = TRUE;
 
         if (!fail) {
-            if (prompt_actor_index != 0) prompt_actor->hidden = TRUE;
+            if (prompt_actor_index != 0) actor_set_anim_idle(prompt_actor);
             return;
         }
 
         if (text_drawn)
         {
-            if (prompt_actor_index != 0) prompt_actor->hidden = FALSE;
+            if (prompt_actor_index != 0) actor_set_anim_moving(prompt_actor);
         }
 
         ui_update();
